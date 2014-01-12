@@ -416,7 +416,7 @@ class Root(object):
 
                     for child in valsi.getchildren():
                         tag, text = child.tag, child.text
-                        processors.get(tag, lambda: None)(entry, text)
+                        processors.get(tag, lambda e, t: None)(entry, text)
 
                     self.entries[entry.word] = entry
 
