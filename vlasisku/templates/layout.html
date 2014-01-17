@@ -24,7 +24,7 @@
   </py:match>
 
   <py:match path="body" once="true">
-    <body py:attrs="select('@*')">
+    <body py:attrs="select('@*')" onload="try{document.search.query.focus();}catch(e){}">
       <div id="doc3">
         <div id="hd">
           <div id="nav">
@@ -36,7 +36,7 @@
           </div>
 
           <div>
-            <form action="/" method="get" onsubmit="return search();" id="search">
+            <form action="/" method="get" onsubmit="return search();" id="search" name="search">
               <p>
                 <input type="text" value="${value_of('query', '')}" size="30" id="query" name="query" accesskey="f" tabindex="1" onfocus="this.select()"/>
                 <button type="submit"><img src="${url_for('.static', filename='favicon-16.png')}" alt=""/> Find!</button>
